@@ -6,17 +6,17 @@ namespace DesignPatterns.AbstractFactory
 {
     public class AbstractFactoryExample : IDinosaurExample
     {
-        private IDinosaurFactory thingFactory;
+        private IDinosaurFactory dinosaurFactory;
 
-        public AbstractFactoryExample(IDinosaurFactory thingFactory)
+        public AbstractFactoryExample(IDinosaurFactory dinosaurFactory)
         {
-            this.thingFactory = thingFactory;
+            this.dinosaurFactory = dinosaurFactory;
         }
 
         public void MakeADinosaurNoise()
         {
-            IDinosaur thing = this.thingFactory.CreateADinosaur();
-            thing.MakeANoise();
+            IDinosaur dinosaur = this.dinosaurFactory.CreateADinosaur();
+            dinosaur.MakeANoise();
         }
     }
 }

@@ -8,12 +8,12 @@ namespace DesignPatterns.FactoryMethod
     {
         public void MakeADinosaurNoise()
         {
-            IDinosaur thing = MakeAThing();
+            IDinosaur dinosaur = MakeADinosaur();
 
-            thing.MakeANoise();
+            dinosaur.MakeANoise();
         }
 
-        public virtual IDinosaur MakeAThing()
+        public virtual IDinosaur MakeADinosaur()
         {
             return new TRex();
         }

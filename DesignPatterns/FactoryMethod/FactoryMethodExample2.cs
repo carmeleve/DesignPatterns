@@ -6,7 +6,7 @@ namespace DesignPatterns.FactoryMethod
 {
     public class FactoryMethodExample2 : FactoryMethodExample
     {
-        public override IDinosaur MakeAThing()
+        public override IDinosaur MakeADinosaur()
         {
             return new Stegosaurus();
         }

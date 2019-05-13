@@ -6,7 +6,7 @@ namespace DesignPatterns
     {
         public void MakeANoise()
         {
-            Console.WriteLine("RAWRR!");
+            Console.WriteLine("RAWWR!");
         }
     }
 }
