@@ -1,5 +1,5 @@
-﻿using DesignPatterns;
-using DesignPatterns.AbstractFactory;
+﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Dinosaur;
 using DesignPatterns.FactoryMethod;
 using System;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns
+namespace DesignPatterns.Dinosaur
 {
     public class TRex : IDinosaur
     {

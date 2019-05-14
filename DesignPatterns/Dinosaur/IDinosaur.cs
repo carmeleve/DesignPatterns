@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns
+﻿namespace DesignPatterns.Dinosaur
 {
     public interface IDinosaur
     {
