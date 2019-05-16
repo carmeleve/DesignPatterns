@@ -1,33 +1,39 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Builder;
 using DesignPatterns.Dinosaur;
 using DesignPatterns.FactoryMethod;
 using System;
 
-namespace DesignPatters
+namespace DesignPatterns
 {
     class Program
     {
         static void Main(string[] args)
         {
-            AbstractFactoryExamples();
+            AbstractFactoryExamples("stegosaurus");
         }
 
-        public static void AbstractFactoryExamples()
+        public static void AbstractFactoryExamples(string dinosaurType)
         {
-            IDinosaurExample af1 = new AbstractFactoryExample(new TRexFactory());
+            IDinosaurNoiseProducer af1 = new AbstractFactory.DinosaurNoiseProducer(new DinosaurFactory(dinosaurType));
             af1.MakeADinosaurNoise();
-
-            IDinosaurExample af2 = new AbstractFactoryExample(new StegosaurusFactory());
-            af2.MakeADinosaurNoise();
         }
 
-        public void FactoryMethodExamples()
+        public static void FactoryMethodExamples()
         {
-            IDinosaurExample fm1 = new FactoryMethodExample();
+            IDinosaurNoiseProducer fm1 = new TRexNoiseProducer();
             fm1.MakeADinosaurNoise();
 
-            IDinosaurExample fm2 = new FactoryMethodExample2();
+            IDinosaurNoiseProducer fm2 = new StegosaurusNoiseProducer();
             fm2.MakeADinosaurNoise();
+        }
+
+        public static void BuilderExample()
+        {
+            MealBuilder builder = new TRexMealBuilder();
+            Meal meal = builder.BuildMeal();
+
+            meal.ServeMeal();
         }
     }
 }

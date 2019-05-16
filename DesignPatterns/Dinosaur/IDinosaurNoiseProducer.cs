@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Dinosaur
 {
-    public interface IDinosaurExample
+    public interface IDinosaurNoiseProducer
     {
         void MakeADinosaurNoise();
     }

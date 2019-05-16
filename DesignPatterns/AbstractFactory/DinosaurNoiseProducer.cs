@@ -1,15 +1,13 @@
 ﻿using DesignPatterns.Dinosaur;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesignPatterns.AbstractFactory
 {
-    public class AbstractFactoryExample : IDinosaurExample
+    public class DinosaurNoiseProducer : IDinosaurNoiseProducer
     {
         private IDinosaurFactory dinosaurFactory;
 
-        public AbstractFactoryExample(IDinosaurFactory dinosaurFactory)
+        public DinosaurNoiseProducer(IDinosaurFactory dinosaurFactory)
         {
             this.dinosaurFactory = dinosaurFactory;
         }
@@ -17,7 +15,11 @@ namespace DesignPatterns.AbstractFactory
         public void MakeADinosaurNoise()
         {
             IDinosaur dinosaur = this.dinosaurFactory.CreateADinosaur();
-            dinosaur.MakeANoise();
+
+            if (dinosaur != null)
+            {
+                dinosaur.MakeANoise();
+            }
         }
     }
 }

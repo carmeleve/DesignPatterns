@@ -1,11 +1,8 @@
 ﻿using DesignPatterns.Dinosaur;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesignPatterns.FactoryMethod
 {
-    public class FactoryMethodExample2 : FactoryMethodExample
+    public class StegosaurusNoiseProducer : TRexNoiseProducer
     {
         public override IDinosaur MakeADinosaur()
         {
