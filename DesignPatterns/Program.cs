@@ -10,7 +10,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            AbstractFactoryExamples("stegosaurus");
+            BuilderExample();
         }
 
         public static void AbstractFactoryExamples(string dinosaurType)
@@ -28,9 +28,20 @@ namespace DesignPatterns
             fm2.MakeADinosaurNoise();
         }
 
+        static void CreateAMealExample()
+        {
+            var meal = new Meal();
+
+            meal.Starter = "a few green leaves";
+            meal.MainCourse = "a huge plate of ferns";
+            meal.Dessert = "some fruit and berries";
+
+            meal.ServeMeal();
+        }
+
         public static void BuilderExample()
         {
-            MealBuilder builder = new TRexMealBuilder();
+            MealBuilder builder = new StegosaurusMealBuilder();
             Meal meal = builder.BuildMeal();
 
             meal.ServeMeal();

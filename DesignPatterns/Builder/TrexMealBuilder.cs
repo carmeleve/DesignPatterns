@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.Builder
 {
-    class TRexMealBuilder : MealBuilder
+    public class TRexMealBuilder : MealBuilder
     {
         protected override void AddStarter()
         {

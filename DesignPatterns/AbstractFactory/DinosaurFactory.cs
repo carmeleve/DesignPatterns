@@ -5,18 +5,16 @@ namespace DesignPatterns.AbstractFactory
 {
     public class DinosaurFactory : IDinosaurFactory
     {
-        private readonly string dinosaurType;
+        private readonly DinosaurType dinosaurType;
 
         public DinosaurFactory(string dinosaurType)
         {
-            this.dinosaurType = dinosaurType;
+            Enum.TryParse(dinosaurType, true, out this.dinosaurType);
         }
 
         public IDinosaur CreateADinosaur()
         {
-            Enum.TryParse(this.dinosaurType, true, out DinosaurType dinosaurTypeEnum);
-
-            switch (dinosaurTypeEnum)
+            switch (this.dinosaurType)
             {
                 case DinosaurType.TRex:
                     return new TRex();
