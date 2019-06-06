@@ -12,8 +12,6 @@ namespace DesignPatterns.Builder
         private readonly Action<Meal> addDessert;
         private readonly Action<Meal> addToppings;
 
-        private readonly Meal meal = new Meal();
-
         public ExtensibleMealBuilder(
             Action<Meal> addStarter, 
             Action<Meal> addMain, 
@@ -28,10 +26,11 @@ namespace DesignPatterns.Builder
 
         public Meal BuildMeal()
         {
-            this.addStarter(this.meal);
-            this.addMain(this.meal);
-            this.addDessert(this.meal);
-            this.addToppings(this.meal);
+            Meal meal = new Meal();
+            this.addStarter(meal);
+            this.addMain(meal);
+            this.addDessert(meal);
+            this.addToppings(meal);
 
             return meal;
         }

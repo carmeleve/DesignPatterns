@@ -10,7 +10,7 @@ namespace DesignPatterns.Dinosaur
 
         public string MainCourse { get; set; }
 
-        private Dessert Dessert { get; set; }
+        private Dessert Dessert;
 
         public void AddTopping(string topping)
         {
