@@ -16,7 +16,7 @@ namespace DesignPatterns.Builder
         }
         protected override void AddDessert()
         {
-            this.meal.Dessert = "Even more meat";
+            this.meal.SetDessert("Even more meat");
         }
         protected override void AddToppings()
         {

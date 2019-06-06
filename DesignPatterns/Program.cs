@@ -34,7 +34,7 @@ namespace DesignPatterns
 
             meal.Starter = "a few green leaves";
             meal.MainCourse = "a huge plate of ferns";
-            meal.Dessert = "some fruit and berries";
+            meal.SetDessert("fruit and berries");
 
             meal.ServeMeal();
         }

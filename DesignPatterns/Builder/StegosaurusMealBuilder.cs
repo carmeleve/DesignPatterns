@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignPatterns.Dinosaur;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,7 +19,7 @@ namespace DesignPatterns.Builder
 
         protected override void AddDessert()
         {
-            this.meal.Dessert = "some fruit and berries";
+            this.meal.SetDessert("fruit and berries");
         }
 
         protected override void AddToppings()

@@ -10,22 +10,23 @@ namespace DesignPatterns.Dinosaur
 
         public string MainCourse { get; set; }
 
-        public string Dessert { get; set; }
-
-        private readonly IList<string> toppings = new List<string>();
+        private Dessert Dessert { get; set; }
 
         public void AddTopping(string topping)
         {
-            toppings.Add(topping);
+            Dessert.AddTopping(topping);
+        }
+
+        public void SetDessert(string dessertName)
+        {
+            Dessert = new Dessert(dessertName);
         }
 
         public void ServeMeal()
         {
-            Console.WriteLine($"Bringing you {Starter}, then {MainCourse}, then {Dessert}");
-            foreach (string topping in toppings)
-            {
-                Console.WriteLine($"And some {topping} on top!");
-            }
+            Console.WriteLine($"Bringing you {Starter}, " +
+                $"then {MainCourse}, " +
+                $"then {Dessert.Name} with {Dessert.ListToppings()} on top");
         }
     }
 }
