@@ -1,8 +1,10 @@
 ﻿using DesignPatterns.AbstractFactory;
 using DesignPatterns.Builder;
+using DesignPatterns.Composite;
 using DesignPatterns.Dinosaur;
 using DesignPatterns.FactoryMethod;
 using System;
+using System.Collections.Generic;
 
 namespace DesignPatterns
 {
@@ -10,7 +12,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            BuilderExample();
+            CompositeExample();
         }
 
         public static void AbstractFactoryExamples(string dinosaurType)
@@ -45,6 +47,29 @@ namespace DesignPatterns
             Meal meal = builder.BuildMeal();
 
             meal.ServeMeal();
+        }
+
+        public static void CompositeExample()
+        {
+            var plants = new List<IPlant>();
+
+            var branch = new Branch(2);
+            var anotherBranch = new Branch(4);
+
+            plants.Add(new Tree(
+                new List<Branch>()
+                    { branch, anotherBranch }
+            ));
+
+            plants.Add(new Leaf());
+            plants.Add(new Branch(5));
+            plants.Add(new Leaf());
+
+            foreach (IPlant plant in plants)
+            {
+                plant.Eat();
+            }
+            
         }
     }
 }
