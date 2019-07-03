@@ -5,6 +5,7 @@ using DesignPatterns.Dinosaur;
 using DesignPatterns.FactoryMethod;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DesignPatterns
 {
@@ -53,16 +54,16 @@ namespace DesignPatterns
         {
             var plants = new List<IPlant>();
 
-            var branch = new Branch(2);
-            var anotherBranch = new Branch(4);
+            var branch = new Branch(new List<IPlant>() { new Leaf(), new Leaf() });
+            var anotherBranch = new Branch(new List<IPlant>() { new Leaf(), new Leaf(), new Leaf(), new Leaf() });
 
-            plants.Add(new Tree(
-                new List<Branch>()
+            plants.Add(new Branch(
+                new List<IPlant>()
                     { branch, anotherBranch }
             ));
 
             plants.Add(new Leaf());
-            plants.Add(new Branch(5));
+            plants.Add(new Branch(new List<IPlant>() { new Leaf(), new Leaf(), new Leaf(), new Leaf(), new Leaf() }));
             plants.Add(new Leaf());
 
             foreach (IPlant plant in plants)

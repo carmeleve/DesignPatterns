@@ -6,20 +6,18 @@ namespace DesignPatterns.Composite
 {
     public class Branch : IPlant
     {
-        private readonly IList<Leaf> leaves = new List<Leaf>();
+        private readonly IList<IPlant> children;
 
-        public Branch(int numberOfLeaves)
+        public Branch(IList<IPlant> children)
         {
-            for (int i = 0; i < numberOfLeaves; i++)
-            {
-                leaves.Add(new Leaf());
-            }
+            this.children = children;
         }
+
         public void Eat()
         {
-            foreach (var leaf in leaves)
+            foreach (var child in children)
             {
-                leaf.Eat();
+                child.Eat();
             }
         }
     }
