@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
@@ -14,7 +15,16 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            DecoratorExample();
+            AdapterExample();
+        }
+
+        public static void AdapterExample()
+        {
+            var triceratops = new Triceratops();
+
+            var child = ChildCreator.CreateChild(new TriceratopsAdapter(triceratops));
+
+            child.Cry();
         }
 
         public static void DecoratorExample()
