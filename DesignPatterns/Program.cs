@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.AbstractFactory;
 using DesignPatterns.Builder;
 using DesignPatterns.Composite;
+using DesignPatterns.Decorator;
 using DesignPatterns.Dinosaur;
 using DesignPatterns.FactoryMethod;
 using System;
@@ -13,7 +14,19 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            CompositeExample();
+            DecoratorExample();
+        }
+
+        public static void DecoratorExample()
+        {
+            var gigantosaurus = new Gigantosaurus();
+
+            Console.WriteLine(gigantosaurus.Roar());
+
+            var loudGigantosaurus = new LoudGigantosarusDecorator(gigantosaurus);
+            var extraLoudGigantosaurus = new ExtraLoudGigantosaurusDecorator(loudGigantosaurus);
+
+            Console.WriteLine(extraLoudGigantosaurus.Roar());
         }
 
         public static void AbstractFactoryExamples(string dinosaurType)
