@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Adapter
 {
-    public class TriceratopsEgg : IEgg
+    public class TriceratopsEgg
     {
         public IChild Hatch()
         {
