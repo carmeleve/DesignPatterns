@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DesignPatterns.Adapter
 {
-    public class TriceratopsAdapter : IMammal
+    public class TriceratopsToMammalAdapter : IMammal
     {
         private readonly Triceratops triceratops;
 
-        public TriceratopsAdapter(Triceratops triceratops)
+        public TriceratopsToMammalAdapter(Triceratops triceratops)
         {
             this.triceratops = triceratops;
         }

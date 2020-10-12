@@ -22,7 +22,7 @@ namespace DesignPatterns
         {
             var triceratops = new Triceratops();
 
-            var child = ChildCreator.CreateChild(new TriceratopsAdapter(triceratops));
+            var child = ChildCreator.CreateChild(new TriceratopsToMammalAdapter(triceratops));
 
             child.Cry();
         }
