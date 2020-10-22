@@ -4,6 +4,7 @@ using DesignPatterns.Builder;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
 using DesignPatterns.Dinosaur;
+using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,25 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            AdapterExample();
+            FacadeExample();
+        }
+
+        public static void FacadeExample()
+        {
+            bool meteor = false;
+            var dinoEcosystemFacade = new DinoEcosystemFacade(new Soil(1));
+            while (!meteor)
+            {
+                dinoEcosystemFacade.RunAGeneration();
+                Console.WriteLine("Has a meteor hit? (Y/N)");
+                var response = Console.ReadLine();
+                if(response == "Y")
+                {
+                    meteor = true;
+                }
+            }
+
+            Console.WriteLine("A meteor has hit and destroyed the ecosystem!");
         }
 
         public static void AdapterExample()
