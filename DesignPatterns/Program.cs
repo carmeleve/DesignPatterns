@@ -6,6 +6,7 @@ using DesignPatterns.Decorator;
 using DesignPatterns.Dinosaur;
 using DesignPatterns.Facade;
 using DesignPatterns.FactoryMethod;
+using DesignPatterns.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,15 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            FacadeExample();
+            ProxyExample();
+        }
+
+        public static void ProxyExample()
+        {
+            var secureNestProxy = new SecureNestProxy(new RealNest());
+
+            secureNestProxy.Access("Stegosaurus");
+            secureNestProxy.Access("TRex");
         }
 
         public static void FacadeExample()
