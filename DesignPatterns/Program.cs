@@ -37,6 +37,27 @@ namespace DesignPatterns
             Console.WriteLine("A meteor has hit and destroyed the ecosystem!");
         }
 
+        public static void FacadeExample1()
+        {
+            bool meteor = false;
+            var soil = new Soil(1);
+            while (!meteor)
+            {
+                var plant = new Plant(soil);
+                var herbivore = new Herbivore(plant);
+                var carnivore = new Carnivore(herbivore);
+                carnivore.Die(soil);
+                Console.WriteLine("Has a meteor hit? (Y/N)");
+                var response = Console.ReadLine();
+                if (response == "Y")
+                {
+                    meteor = true; 
+                }
+            }
+
+            Console.WriteLine("A meteor has hit and destroyed the ecosystem!");
+        }
+
         public static void AdapterExample()
         {
             var triceratops = new Triceratops();
